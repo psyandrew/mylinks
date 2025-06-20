@@ -1,23 +1,26 @@
+import { useState } from 'react';
+import Intro from './components/Intro.js'
+import Mastermind from './components/Mastermind.js'
+import Company from './components/Company.js'
+import Dota from './components/Dota.js'
+import Codewar from './components/Codewar.js'
+
+
 function App() {
+
+  const [page, setPage]= useState(0)
+
+  const pageSetter =(n)=>{
+    setPage(n)
+  } 
+
   return (
     <div className="App bg">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-pzjw8f+ua7Kw1TIq7wXb0iACpikoM+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"/>
-      <div className='profilecontainer'>
-        <span className='profilephoto'></span>
-        <div className='profileheader'>
-          <p className='name'>Sean Andrew Casero</p>
-          <p className='title'>Web Developer</p>
-        </div>
-        <span className='logo'><p>R</p><p>C</p><p>P</p></span>
-        <div className='linkcontainer'>
-          <button className='linkboxbtn' style={{ fontSize: '1.2rem' }}>RESUME</button>
-          <p>PORTFOLIO</p>
-          <button className='linkboxbtn'>COMPANY WEBSITE</button>
-          <button className='linkboxbtn'>MASTERMIND</button>
-          <button className='linkboxbtn'>BATTLESHIP</button>
-        </div>
-      </div>
-
+      {page === 0 && <Intro pageSetter={pageSetter}/> }
+      {page === 1 && <Company pageSetter={pageSetter}/> }
+      {page === 2 && <Mastermind pageSetter={pageSetter}/> }
+      {page === 3 && <Dota pageSetter={pageSetter}/> }
+      {page === 4 && <Codewar pageSetter={pageSetter}/> }
     </div>
   );
 }
