@@ -1,3 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLeaf, faPuzzlePiece, faFile, faLaptopCode, faSquarePollVertical } from '@fortawesome/free-solid-svg-icons';
+import { faReact, faCss3Alt, faPython } from '@fortawesome/free-brands-svg-icons';
+
 function Intro({pageSetter}) {
     return(
       <div className='pfl-container'>
@@ -7,9 +11,9 @@ function Intro({pageSetter}) {
           <p className='title'>Web Developer</p>
         </div>
         <div className='logos'>
-          <i class="fa-brands fa-react"></i>
-          <i class="fa-brands fa-css3-alt"></i>
-          <i class="fa-brands fa-python"></i>
+          <FontAwesomeIcon icon={faReact} />
+          <FontAwesomeIcon icon={faCss3Alt} />
+          <FontAwesomeIcon icon={faPython} />
         </div>
         <div className='pfl-header'>
           <p>PROFILE</p>
@@ -17,13 +21,13 @@ function Intro({pageSetter}) {
         <div className='link-container'>
           <div className='link-card'>
             <div className='link-logo'>
-              <i class="fa-solid fa-file"></i>
+              <FontAwesomeIcon icon={faFile} /> 
             </div>
-            <button>Resume</button>
+            <button onClick={() => window.open('https://drive.google.com/file/d/1p2hSM37ye3f1iisyB0xFM_go_nmuuUtu/view?usp=sharing', '_blank')}>Resume</button>
           </div>    
           <div className='link-card'>
             <div className='link-logo'>
-              <i class="fa-solid fa-laptop-code"></i>
+              <FontAwesomeIcon icon={faLaptopCode} />
             </div>
             <button onClick={()=> pageSetter(4)}>Codewars</button>
           </div> 
@@ -35,19 +39,19 @@ function Intro({pageSetter}) {
         <div className='link-container'>
           <div className='link-card'>
             <div className='link-logo'>
-              <i class="fa-solid fa-leaf"></i>
+              <FontAwesomeIcon icon={faLeaf} />
             </div>
             <button onClick={()=> pageSetter(1)}>Company Website</button>
           </div>
           <div className='link-card'>
             <div className='link-logo'>
-              <i class="fa-solid fa-puzzle-piece"></i>
+              <FontAwesomeIcon icon={faPuzzlePiece} />
             </div>
             <button onClick={()=> pageSetter(2)}>Mastermind</button>
           </div>
           <div className='link-card'>
             <div className='link-logo'>
-              <i class="fa-solid fa-square-poll-vertical"></i>
+              <FontAwesomeIcon icon={faSquarePollVertical} />
             </div>
             <button onClick={()=> pageSetter(3)}>Dota 2 Stats Tracker</button>
           </div> 
